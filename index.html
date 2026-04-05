@@ -208,231 +208,258 @@ a {
     color: #38bdf8;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-a:hover {
-    color: #0ea5e9;
-    text-decoration: underline;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     margin: 12px 0;
-    transition: transform 0.2s ease;
 }
 
-.contact-item:hover {
-    transform: translateX(5px);
-}
-
-.skill-tag {
-    display: inline-block;
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8;
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin: 5px 5px 5px 0;
-    font-size: 13px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    background: rgba(56, 189, 248, 0.2);
-    transform: translateY(-2px);
-}
-
+/* PRINT STYLES */
 @media print {
     @page {
-        size: A4;
         margin: 0;
+        size: A4 portrait;
     }
-    
-    body {
-        background: white !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        min-height: auto !important;
-    }
-    
-    .container {
-        box-shadow: none !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-        animation: none !important;
-        display: flex !important;
-        flex-direction: row !important;
-        page-break-inside: avoid !important;
-        height: auto !important;
-        min-height: 100vh !important;
-    }
-    
-    .left {
-        width: 35% !important;
-        background: #1e293b !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-        color-adjust: exact !important;
-        padding: 30px 20px !important;
-        page-break-inside: avoid !important;
-    }
-    
-    .left::before {
-        display: none !important;
-    }
-    
-    .right {
-        width: 65% !important;
-        padding: 30px !important;
-        page-break-inside: avoid !important;
-    }
-    
-    .right, .left {
-        animation: none !important;
-    }
-    
-    .left h1 {
-        font-size: 24px !important;
-    }
-    
-    .left h2 {
-        font-size: 16px !important;
-        margin-top: 20px !important;
-    }
-    
-    .right h2 {
-        font-size: 18px !important;
-        margin-top: 20px !important;
-    }
-    
-    .right p, .left p, .right li, .left li {
-        font-size: 13px !important;
-    }
-    
-    a {
-        color: #0ea5e9 !important;
-        text-decoration: underline !important;
-    }
-    
-    .contact-item:hover,
-    .skill-tag:hover,
-    a:hover {
-        transform: none !important;
-    }
-    
-    * {
-        page-break-inside: avoid !important;
-    }
-}
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
     }
-    .left, .right {
+
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        min-height: auto;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
         width: 100%;
+        animation: none;
+        display: flex;
+        min-height: 100vh;
+    }
+
+    .left, .right {
+        animation: none;
+        page-break-inside: avoid;
+    }
+
+    .left {
+        width: 35%;
+        background: #1e293b !important;
+        color: white !important;
+        padding: 30px 25px;
+    }
+
+    .left::before {
+        display: none;
+    }
+
+    .left h1 {
+        font-size: 26px;
+        color: white !important;
+        margin-bottom: 5px;
+    }
+
+    .left > p:first-of-type {
+        color: #cbd5e1 !important;
+        font-size: 14px;
+    }
+
+    .left h2 {
+        color: white !important;
+        font-size: 16px;
+        border-bottom: 2px solid #5dade2 !important;
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
+
+    .left p {
+        color: #e2e8f0 !important;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .left li {
+        color: #e2e8f0 !important;
+        font-size: 13px;
+        margin: 8px 0;
+    }
+
+    .left li::before {
+        color: #5dade2 !important;
+    }
+
+    .left a {
+        color: #5dade2 !important;
+    }
+
+    .right {
+        width: 65%;
+        padding: 30px 35px;
+        background: white;
+    }
+
+    .right h2 {
+        color: #2c3e50 !important;
+        font-size: 20px;
+        border-bottom: 3px solid #5b7fd8 !important;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+    }
+
+    .right h2:first-of-type {
+        margin-top: 0;
+    }
+
+    .right h2::after {
+        display: none;
+    }
+
+    .right p {
+        color: #4a5568 !important;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .right p strong {
+        color: #2d3748 !important;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .right li {
+        color: #4a5568 !important;
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 6px 0;
+    }
+
+    .right a {
+        color: #5dade2 !important;
+    }
+
+    .contact-item {
+        margin: 10px 0;
+    }
+
+    /* Prevent page breaks inside sections */
+    .right > p, .right > ul {
+        page-break-inside: avoid;
     }
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-    <!-- LEFT -->
-    <div class="left">
-        <h1>Alok Pratap Yadav</h1>
-        <p>B.Tech CSE (AI & ML)</p>
+<!-- LEFT -->
+<div class="left">
+    <h1>Alok Pratap Yadav</h1>
+    <p>B.Tech CSE (AI & ML)</p>
 
-        <h2>Contact</h2>
-        <div class="contact-item">
-            <p>📍 Bhopal, India</p>
-        </div>
-        <div class="contact-item">
-            <p>✉️ alokpratapyadav85@gmail.com</p>
-        </div>
-        <div class="contact-item">
-            <p>🔗 <a href="https://www.linkedin.com/in/alok-ydv" target="_blank">LinkedIn Profile</a></p>
-        </div>
-        <div class="contact-item">
-            <p>💻 <a href="https://github.com/alok-ydvv" target="_blank">GitHub Profile</a></p>
-        </div>
+    <h2>Contact</h2>
+    <div class="contact-item"><p>📍 Bhopal, India</p></div>
+    <div class="contact-item"><p>📞 +91-9572930436</p></div>
+    <div class="contact-item"><p>✉️ alokpratapyadav85@gmail.com</p></div>
+    <div class="contact-item"><p>🔗 <a href="https://www.linkedin.com/in/alok-ydv" target="_blank">linkedin.com/in/alok-ydv</a></p></div>
+    <div class="contact-item"><p>💻 <a href="https://github.com/alok-ydvv" target="_blank">github.com/alok-ydvv</a></p></div>
 
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>C++, Python</li>
-            <li>DOM Manipulation</li>
-            <li>LocalStorage & APIs</li>
-            <li>Data Structures</li>
-            <li>Git & GitHub</li>
-        </ul>
+    <h2>Technical Skills</h2>
+    <ul>
+    <li>Python Programming</li>
+    <li>Data Analysis (Pandas, NumPy)</li>
+    <li>Web Development (HTML, CSS, JavaScript)</li>
+    <li>Backend Frameworks (Django, Flask)</li>
+    <li>REST API Integration</li>
+    <li>Database (SQL)</li>
+    <li>Version Control (Git, GitHub)</li>
+    <li>Data Visualization</li>
+    <li>Problem Solving & Debugging</li>
+</ul>
 
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Problem Solving</li>
-            <li>Team Collaboration</li>
-            <li>Communication</li>
-            <li>Quick Learner</li>
-            <li>Adaptability</li>
-        </ul>
-    </div>
+    <h2>Soft Skills</h2>
+    <ul>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+        <li>Analytical Thinking</li>
+        <li>Quick Learner</li>
+        <li>Attention to Detail</li>
+        <li>Time Management</li>
+    </ul>
+</div>
 
-    <!-- RIGHT -->
-    <div class="right">
+<!-- RIGHT -->
+<div class="right">
 
-        <h2>Profile Summary</h2>
-        <p>
-            Motivated Computer Science (AI & ML) student with strong fundamentals in web development 
-            and programming. Experienced in building real-world projects using HTML, CSS, and JavaScript. 
-            Seeking internship opportunities to gain practical experience and enhance technical skills.
-        </p>
+    <h2>Profile Summary</h2>
+    <p>
+        Aspiring software developer with strong foundation in Python programming and data analysis. Experienced in working with REST APIs, data processing using Pandas, and building web applications. Currently expanding skills in Django and Flask frameworks. Eager to contribute to innovative projects and grow as a developer in a dynamic team environment.
+    </p>
 
-        <h2>Projects</h2>
+    <h2>Projects</h2>
 
-        <p><strong>🎯 Advanced Task Management Web Application</strong></p>
-        <ul>
-            <li>Developed a feature-rich task management app using HTML, CSS, and JavaScript</li>
-            <li>Implemented priority levels, due dates, filtering, and search functionality</li>
-            <li>Used LocalStorage for persistent data storage</li>
-            <li>Designed modern UI with multiple themes and smooth animations</li>
-        </ul>
-        <p>
-            🔗 <a href="https://alok-ydvv.github.io/todo-app" target="_blank">View Live Demo</a>
-        </p>
+    <p><strong>✅ Advanced To-Do App</strong></p>
+    <ul>
+        <li>Built a feature-rich task management web application using JavaScript</li>
+        <li>Implemented priority levels, due dates, categories, and search functionality</li>
+        <li>Added multiple UI themes and LocalStorage for data persistence</li>
+        <li>Created intuitive filtering system for efficient task organization</li>
+    </ul>
+    <p>🔗 <a href="https://alok-ydvv.github.io/todo-app" target="_blank">alok-ydvv.github.io/todo-app</a></p>
 
-        <p><strong>🌐 Portfolio Website</strong></p>
-        <ul>
-            <li>Designed a personal portfolio website to showcase projects and skills</li>
-            <li>Fully responsive layout with modern UI/UX principles</li>
-            <li>Implemented smooth scrolling and interactive elements</li>
-        </ul>
-        <p>
-            🔗 <a href="https://alok-ydvv.github.io/portfolio" target="_blank">View Live Demo</a>
-        </p>
+    <p><strong>📊 Data Analysis & Reporting System</strong></p>
+    <ul>
+        <li>Developed Python application to fetch and process data from REST APIs</li>
+        <li>Implemented data cleaning and transformation using Pandas library</li>
+        <li>Generated automated reports with key metrics and insights</li>
+        <li>Exported processed data in multiple formats (CSV, JSON)</li>
+    </ul>
 
-        <h2>Education</h2>
-        <p>
-            B.Tech – Computer Science (AI & ML)<br>
-            Oriental Institute of Science & Technology, Bhopal<br>
-            RGPV University (2023 – 2027)
-        </p>
+    <p><strong>🌐 Personal Portfolio Website</strong></p>
+    <ul>
+        <li>Created responsive portfolio website using HTML, CSS, and JavaScript</li>
+        <li>Showcased projects and technical skills with modern UI design</li>
+        <li>Implemented smooth animations and user-friendly navigation</li>
+    </ul>
+    <p>🔗 <a href="https://alok-ydvv.github.io/portfolio" target="_blank">alok-ydvv.github.io/portfolio</a></p>
 
-        <h2>Experience</h2>
-        <p><strong>🐍 Python Intern</strong></p>
-        <ul>
-            <li>Worked on Python programming tasks and automation scripts</li>
-            <li>Improved logic building and problem-solving skills</li>
-            <li>Collaborated with team members on various projects</li>
-        </ul>
+    <p><strong>📝 Flask Notes App</strong></p>
+    <ul>
+        <li>Built a web application using Flask framework for creating and managing notes</li>
+        <li>Implemented CRUD operations with SQLite database integration</li>
+        <li>Designed modern, responsive UI with user-friendly interface with Bootstrap styling</li>
+        <li>Features include Added timestamp tracking (created/edited), form validation, and delete confirmation</li>
+    </ul>
 
-    </div>
+    <h2>Education</h2>
+    <p>
+        B.Tech – Computer Science (AI & ML)<br>
+        Oriental Institute of Science & Technology, Bhopal<br>
+        RGPV University (2023 – 2027)
+    </p>
+
+    <h2>Experience</h2>
+    <p><strong>Python Development Intern</strong></p>
+    <ul>
+        <li>Developed Python scripts for automation and data processing tasks</li>
+        <li>Collaborated with team on various development projects</li>
+        <li>Gained hands-on experience in debugging and code optimization</li>
+        <li>Learned industry best practices and development workflows</li>
+    </ul>
+
+</div>
 
 </div>
 
